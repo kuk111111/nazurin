@@ -152,6 +152,11 @@ class Pixiv(object):
             else:
                 tag_name = tag.name
             tags += '#' + tag_name.replace(' ', '_') + ' '
+            tags = tags.replace('#R-18G', '#R18G #NSFW')
+            tags = tags.replace('#R-18', '#R18 #NSFW')
+            tags = tags.replace('#・ミグルディア', '')
+            tags = tags.replace('#〜異世界行ったら本気だす〜', '')
+            tags = tags.replace('#ロキニー  #ロキニー ', '#ロキニー ')
         details = {
             'title': illust.title,
             'author': illust.user.name,
